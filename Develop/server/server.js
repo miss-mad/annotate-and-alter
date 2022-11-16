@@ -3,7 +3,7 @@
 const express = require('express');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // express middleware to create routes for the dist folder inside the client side folder; serves static files in the entire client's dist folder; want to give them the bundled files, not the unbundled files
 app.use(express.static('../client/dist'));
@@ -16,4 +16,4 @@ app.use(express.json());
 require('./routes/htmlRoutes')(app);
 
 // tell the app which port to listen to
-app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT} `));
